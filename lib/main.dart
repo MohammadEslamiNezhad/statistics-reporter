@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/start_screen.dart';
+import 'package:statistics_reporter/colors.dart';
+import 'package:statistics_reporter/login_screen.dart';
+import 'package:statistics_reporter/main_screen.dart';
+import 'package:statistics_reporter/auth_screen.dart';
+
+import 'dimen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,15 +13,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Statistics Reporter',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'DanaFaNum',
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+        textTheme: TextTheme(
+          labelMedium: TextStyle(color: textColorPrimary, fontSize: textSizedLabelMedium),
+        )
       ),
-      home: StartScreen(),
+      home: LoginScreen(),
     );
   }
 }
